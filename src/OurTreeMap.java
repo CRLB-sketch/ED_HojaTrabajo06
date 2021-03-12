@@ -15,9 +15,10 @@
  * @since 2021-Marzo-11
  **/    
 
+import java.util.Map;
 import java.util.TreeMap;
 
-public class OurTreeMap {
+public class OurTreeMap implements IMap{
     
     // --> Definir el Tree Map
     private TreeMap<String, String> map;
@@ -28,8 +29,25 @@ public class OurTreeMap {
     }
     
     // --> Métodos
+    @Override
     public void putElement(String key, String value){
         map.put(key, value);
     }
-    
+
+    @Override
+    public String seeContent(){
+        String information = "";
+
+        for(Map.Entry<String, String> entry: map.entrySet()){
+            information += "Categoria: " + entry.getKey() + " - Descripción Producto: " + entry.getValue();
+        }
+        
+        return information;
+    }
+
+    @Override
+    public String toString() {
+        return "Tree Map";
+    }
+
 }

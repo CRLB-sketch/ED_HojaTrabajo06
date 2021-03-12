@@ -15,6 +15,36 @@
  * @since 2021-Marzo-11
  **/    
 
-public class OurHashMap {
+import java.util.Map;
+import java.util.HashMap;
+
+public class OurHashMap implements IMap{
+
+    private HashMap<String, String> map;
+    
+    public OurHashMap(){
+        map  = new HashMap<String, String>();
+    }
+    
+    @Override
+    public void putElement(String key, String value) {
+        map.put(key, value);
+    }
+    
+    @Override
+    public String seeContent(){
+        String information = "";
+
+        for(Map.Entry<String, String> entry: map.entrySet()){
+            information += "Categoria: " + entry.getKey() + " - Descripción Producto: " + entry.getValue();
+        }
+        
+        return information;
+    }
+
+    @Override
+    public String toString() {
+        return "Hash Map";
+    }
     
 }

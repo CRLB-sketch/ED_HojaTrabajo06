@@ -21,10 +21,13 @@ public class Controller {
     
     // --> Atributos
     private View view;
+    private ReaderTxt readTxt;
+    private IMap map;
 
     // --> Métodos
     public Controller(){
         view = new View();
+        readTxt = new ReaderTxt();
     }
 
     // --> Constructor
@@ -34,46 +37,57 @@ public class Controller {
 
         do {
             
-            String op = view.mainMenu();
+            String op = view.mainMenu(map);
 
             switch (op) {
 
-                // 1. 
+                // 1. Definir el tipo de Map
                 case "1":
+                    view.dialogueTest("----- Definir Map -----");
+                    String the_map = view.defineMap(); 
+                    map = Factory.create(the_map);;                    
+                    break;
+                    
+                // 2. Agregar Producto
+                case "2":
                     view.dialogueTest("----- Agregar Producto -----");
                     break;
                     
-                // 2. 
-                case "2":
+                // 3. Mostrar Categoria Producto
+                case "3":
                     view.dialogueTest("----- Mostrar categoria Producto -----");                    
                     break;
-
-                // 3. 
-                case "3":
+                    
+                // 4. Mostrar datos producto
+                case "4":
                     view.dialogueTest("----- Mostrar datos producto -----");
                     break;
-
-                // 4. 
-                case "4":
+                    
+                // 5. Mostrar datos producto (Ordenadamente)
+                case "5":
                     view.dialogueTest("----- Mostrar datos producto (Ordenadamente) -----");
                     break;
-
-                // 5. 
-                case "5":
-                    view.dialogueTest("----- Mostrar categoria Producto y Categoria -----");
-                    break;
-
-                // 6. 
+                    
+                // 6. Mostrar categoria Producto y Categoria de todo el inventario
                 case "6":
+                    view.dialogueTest("----- Mostrar categoria Producto y Categoria -----");
+                    String all = readTxt.readFile("docs\\ListadoProducto.txt");
+
+                    // view.dialogueTest(all); // Mostrar contenido
+                    break;
+                    
+                // 7. Mostrar Producto y Categoria Existente
+                case "7":
                     view.dialogueTest("----- Mostrar Producto y Categoria Existentes (Ordenadamente) -----");
                     break;
 
-                // 7. 
-                case "7":
+                // 8. Salir
+                case "8":
                     out = true;
                     view.farewell();
                     break;
             
+                // Opción inválida
                 default:
                     view.invalid();
                     break;
@@ -82,4 +96,6 @@ public class Controller {
         } while (!out);
         
     }
+
+
 }

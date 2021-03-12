@@ -30,17 +30,28 @@ public class View {
     }
 
     // --> Métodos
-    public String mainMenu(){
+    public String mainMenu(IMap map){
+        System.out.println("####################################################################################");
+        System.out.println("+++++ Tipo de Map : [" + map + "] +++++");
         System.out.println("Menú principal: ");
-        System.out.println("1. Agregar un producto a la colección del usuario.");
-        System.out.println("2. Mostrar la categoría del producto.");
-        System.out.println("3. Mostrar los datos del producto.");
-        System.out.println("4. Mostrar los datos del producto (Ordenadas por tipo).");
-        System.out.println("5. Mostrar el producto y la categoría de todo el inventario.");
-        System.out.println("6. Mostrar el producto y la categoría existentes (ordenadas por tipo).");
-        System.out.println("7. Salir");
+        System.out.println("1. Definir tipo de Map.");
+        System.out.println("2. Agregar un producto a la colección del usuario.");
+        System.out.println("3. Mostrar la categoría del producto.");
+        System.out.println("4. Mostrar los datos del producto.");
+        System.out.println("5. Mostrar los datos del producto (Ordenadas por tipo).");
+        System.out.println("6. Mostrar el producto y la categoría de todo el inventario.");
+        System.out.println("7. Mostrar el producto y la categoría existentes (ordenadas por tipo).");
+        System.out.println("8. Salir");
 
         String op = scan.nextLine();
+        return op;
+    }
+
+    public String defineMap(){
+        System.out.println("1. HashMap");
+        System.out.println("2. TreeMap");
+
+        String op = scan.nextLine();         
         return op;
     }
     

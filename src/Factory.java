@@ -20,6 +20,22 @@
 
 public class Factory {
     
-    
+    public static IMap create(String type){
+        switch (type) {
+
+            // Implementar [Hash Map]
+            case "1":
+                return new OurHashMap();
+
+            // Implementar [Tree Map]
+            case "2":
+                return new OurTreeMap();
+        
+            // Map Inválido
+            default:
+                return null;
+                
+        }
+    }
     
 }
