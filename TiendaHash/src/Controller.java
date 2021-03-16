@@ -33,7 +33,7 @@ public class Controller {
     // --> Constructor
     public void menu(){
 
-        boolean out = false;
+        boolean out = false; // Para el menu
 
         do {
             
