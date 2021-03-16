@@ -33,6 +33,7 @@ public class Controller {
     // --> Constructor
     public void menu(){
 
+        String info = "";
         boolean out = false; // Para el menu
 
         do {
@@ -61,7 +62,8 @@ public class Controller {
                                 view.errorFile();
                             }
                             else{
-                                map = ReaderTxt.bringMap(all, map);                            
+                                map = ReaderTxt.bringMap(all, map);     
+                                info = all;                                      
                             }
     
                         }
@@ -80,7 +82,7 @@ public class Controller {
                         
                     // 4. Mostrar datos producto
                     case "4":
-                        view.dialogueTest("----- Mostrar datos producto -----");
+                        view.dialogueTest("----- Mostrar datos producto -----");                        
                         break;
                         
                     // 5. Mostrar datos producto (Ordenadamente)
@@ -91,13 +93,13 @@ public class Controller {
                     // 6. Mostrar categoria Producto y Categoria de todo el inventario
                     case "6":
                         view.dialogueTest("----- Mostrar Producto y Categoria -----");                                        
-                        view.dialogueTest(map.seeContent());
-    
+                        view.dialogueTest(info);
                         break;
                         
                     // 7. Mostrar Producto y Categoria Existente
                     case "7":
                         view.dialogueTest("----- Mostrar Producto y Categoria Existentes (Ordenadamente) -----");
+                        view.dialogueTest(map.seeContent());
                         break;
     
                     // 8. Salir

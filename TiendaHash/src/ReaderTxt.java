@@ -37,7 +37,7 @@ public class ReaderTxt {
             String bfRead;
 
             while((bfRead = bf.readLine()) != null){
-                temp = temp + bfRead;
+                temp = temp + bfRead + "\n";
             }
 
             text = temp;
