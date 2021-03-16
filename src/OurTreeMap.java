@@ -39,7 +39,7 @@ public class OurTreeMap implements IMap{
         String information = "";
 
         for(Map.Entry<String, String> entry: map.entrySet()){
-            information += "Categoria: " + entry.getKey() + " - Descripción Producto: " + entry.getValue();
+            information += "\nCategoria: " + entry.getKey() + " - Descripción Producto: " + entry.getValue();
         }
         
         return information;

@@ -17,17 +17,17 @@
  * @since 2021-Marzo-11
  **/    
 
+import java.lang.NullPointerException;
+
 public class Controller {
     
     // --> Atributos
     private View view;
-    private ReaderTxt readTxt;
     private IMap map;
 
     // --> Métodos
     public Controller(){
         view = new View();
-        readTxt = new ReaderTxt();
     }
 
     // --> Constructor
@@ -39,63 +39,88 @@ public class Controller {
             
             String op = view.mainMenu(map);
 
-            switch (op) {
+            try {
 
-                // 1. Definir el tipo de Map
-                case "1":
-                    view.dialogueTest("----- Definir Map -----");
-                    String the_map = view.defineMap(); 
-                    map = Factory.create(the_map);;                    
-                    break;
-                    
-                // 2. Agregar Producto
-                case "2":
-                    view.dialogueTest("----- Agregar Producto -----");
-                    break;
-                    
-                // 3. Mostrar Categoria Producto
-                case "3":
-                    view.dialogueTest("----- Mostrar categoria Producto -----");                    
-                    break;
-                    
-                // 4. Mostrar datos producto
-                case "4":
-                    view.dialogueTest("----- Mostrar datos producto -----");
-                    break;
-                    
-                // 5. Mostrar datos producto (Ordenadamente)
-                case "5":
-                    view.dialogueTest("----- Mostrar datos producto (Ordenadamente) -----");
-                    break;
-                    
-                // 6. Mostrar categoria Producto y Categoria de todo el inventario
-                case "6":
-                    view.dialogueTest("----- Mostrar categoria Producto y Categoria -----");
-                    String all = readTxt.readFile("docs\\ListadoProducto.txt");
+                switch (op) {
 
-                    // view.dialogueTest(all); // Mostrar contenido
-                    break;
-                    
-                // 7. Mostrar Producto y Categoria Existente
-                case "7":
-                    view.dialogueTest("----- Mostrar Producto y Categoria Existentes (Ordenadamente) -----");
-                    break;
-
-                // 8. Salir
-                case "8":
-                    out = true;
-                    view.farewell();
-                    break;
-            
-                // Opción inválida
-                default:
-                    view.invalid();
-                    break;
+                    // 1. Definir el tipo de Map
+                    case "1":
+                        view.dialogueTest("----- Definir Map -----");
+                        // Establecer Mapa
+                        String the_map = view.defineMap(); 
+                        map = Factory.create(the_map);;           
+                        
+                        if(map == null){ // No esta definido
+                            view.errorMap();
+                        }
+                        else{ // Se definio con exito   
+    
+                            String all = ReaderTxt.readFile("docs\\ListadoProducto.txt");
+    
+                            if(all.equals("error")){
+                                view.errorFile();
+                            }
+                            else{
+                                map = ReaderTxt.bringMap(all, map);                            
+                            }
+    
+                        }
+                        
+                        break;
+                        
+                    // 2. Agregar Producto
+                    case "2":
+                        view.dialogueTest("----- Agregar Producto -----");
+                        break;
+                        
+                    // 3. Mostrar Categoria Producto
+                    case "3":
+                        view.dialogueTest("----- Mostrar categoria Producto -----");                    
+                        break;
+                        
+                    // 4. Mostrar datos producto
+                    case "4":
+                        view.dialogueTest("----- Mostrar datos producto -----");
+                        break;
+                        
+                    // 5. Mostrar datos producto (Ordenadamente)
+                    case "5":
+                        view.dialogueTest("----- Mostrar datos producto (Ordenadamente) -----");
+                        break;
+                        
+                    // 6. Mostrar categoria Producto y Categoria de todo el inventario
+                    case "6":
+                        view.dialogueTest("----- Mostrar Producto y Categoria -----");                                        
+                        view.dialogueTest(map.seeContent());
+    
+                        break;
+                        
+                    // 7. Mostrar Producto y Categoria Existente
+                    case "7":
+                        view.dialogueTest("----- Mostrar Producto y Categoria Existentes (Ordenadamente) -----");
+                        break;
+    
+                    // 8. Salir
+                    case "8":
+                        out = true;
+                        view.farewell();
+                        break;
+                
+                    // Opción inválida
+                    default:
+                        view.invalid();
+                        break;
+                }
+            } 
+            catch(NullPointerException ne){
+                view.errorMap();
             }
+            catch (Exception e) {
+                view.errorUknow();
+            }            
             
         } while (!out);
         
     }
-
 
 }

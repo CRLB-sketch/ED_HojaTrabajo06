@@ -54,6 +54,18 @@ public class View {
         String op = scan.nextLine();         
         return op;
     }
+
+    public void errorFile(){
+        System.out.println("--> No se logro encontrar el archivo");
+    }
+
+    public void errorMap(){
+        System.out.println("--> HEY! Todavía no has definido un map, tienes que definir uno");
+    }
+
+    public void errorUknow(){
+        System.out.println("--> Error desconocido :(");
+    }
     
     public void invalid(){
         System.out.println("--> Opción Inválida");
