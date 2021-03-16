@@ -61,7 +61,7 @@ public class Controller {
                                 view.errorFile();
                             }
                             else{
-                                map = ReaderTxt.bringMap(all, map);                            
+                                map = ReaderTxt.bringMap(all, map);                                                      
                             }
     
                         }
