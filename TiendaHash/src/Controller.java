@@ -72,38 +72,28 @@ public class Controller {
                         
                     // 2. Agregar Producto
                     case "2":
-                        view.dialogueTest("----- Agregar Producto -----");
+                        view.dialogueTest("----- Agregar Producto A Usuario-----");
                         break;
                         
                     // 3. Mostrar Categoria Producto
                     case "3":
-                        view.dialogueTest("----- Mostrar categoria Producto -----");                    
+                        view.dialogueTest("----- Mostrar categoria Producto -----");  
+                        String category = view.getCategory();
+                        
                         break;
                         
                     // 4. Mostrar datos producto
                     case "4":
-                        view.dialogueTest("----- Mostrar datos producto -----");                        
+                        view.dialogueTest("----- Mostrar carrito de compras -----");                        
                         break;
                         
                     // 5. Mostrar datos producto (Ordenadamente)
                     case "5":
-                        view.dialogueTest("----- Mostrar datos producto (Ordenadamente) -----");
+                        view.dialogueTest("----- Mostrar productos en tienda -----");
                         break;
                         
-                    // 6. Mostrar categoria Producto y Categoria de todo el inventario
-                    case "6":
-                        view.dialogueTest("----- Mostrar Producto y Categoria -----");                                        
-                        view.dialogueTest(info);
-                        break;
-                        
-                    // 7. Mostrar Producto y Categoria Existente
-                    case "7":
-                        view.dialogueTest("----- Mostrar Producto y Categoria Existentes (Ordenadamente) -----");
-                        view.dialogueTest(map.seeContent());
-                        break;
-    
                     // 8. Salir
-                    case "8":
+                    case "6":
                         out = true;
                         view.farewell();
                         break;

@@ -34,17 +34,21 @@ public class View {
         System.out.println("####################################################################################");
         System.out.println("+++++ Tipo de Map : [" + map + "] +++++");
         System.out.println("Menú principal: ");
-        System.out.println("1. Definir tipo de Map.");
-        System.out.println("2. Agregar un producto a la colección del usuario.");
-        System.out.println("3. Mostrar la categoría del producto.");
-        System.out.println("4. Mostrar los datos del producto.");
-        System.out.println("5. Mostrar los datos del producto (Ordenadas por tipo).");
-        System.out.println("6. Mostrar el producto y la categoría de todo el inventario.");
-        System.out.println("7. Mostrar el producto y la categoría existentes (ordenadas por tipo).");
-        System.out.println("8. Salir");
+        System.out.println("1. Definir tipo de Map."); // Seleccion de Map
+        System.out.println("2. Agregar un producto a la colección del usuario.");  //Producto agregado a la lista de compras
+        System.out.println("3. Mostrar la categoría de un producto."); // La categoria del producto es "Lacteos" // Ya esta
+        System.out.println("4. Mostrar carrito de compra (Ordenado por categoría)."); //Un for, pero ordenado por categoria
+        System.out.println("5. Ver productos disponibles en la tienda (Ordenadas por categoria)."); // El listado de todo dentro del archivo pero ordenado // Ya esta
+        System.out.println("6. Salir");
 
         String op = scan.nextLine();
         return op;
+    }
+    
+    public String getCategory() {
+		System.out.print("Escriba que categoria quiere buscar: ");
+        String busqueda = scan.nextLine();
+		return busqueda;
     }
 
     public String defineMap(){
