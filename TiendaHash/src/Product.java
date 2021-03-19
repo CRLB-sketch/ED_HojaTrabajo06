@@ -18,10 +18,13 @@
  **/    
 
 public class Product {
+
+	// --> Atributos
 	private String categoria;
 	private String descripcion;
 	private Integer stock;
 	
+	// --> Constructor
 	public Product(String categoria, String descripcion, Integer stock) {
 		this.categoria = categoria;
 		this.descripcion = descripcion;
@@ -29,6 +32,8 @@ public class Product {
 	}
 	
 	/**
+	 * Getter Categoria
+	 * 
 	 * @return the nombre
 	 */
 	public String getCategoria() {
@@ -36,6 +41,8 @@ public class Product {
 	}
 
 	/**
+	 * Getter Descripción
+	 * 
 	 * @return the descripcion
 	 */
 	public String getDescripcion() {
@@ -43,6 +50,8 @@ public class Product {
 	}
 
 	/**
+	 * Getter Stock
+	 * 
 	 * @return the stock
 	 */
 	public Integer getStock() {
@@ -50,26 +59,20 @@ public class Product {
 	}
 
 	/**
-	 * @param nombre the categoria to set
-	 */
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
-	/**
-	 * @param descripcion the descripcion to set
-	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	/**
+	 * Setter Stock
+	 * 
 	 * @param existencia the stock to set
 	 */
 	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
 	
+	
+	/** 
+	 * Método To String
+	 * 
+	 * @return String	Retorna el nuevo String
+	 */
 	public String toString() {
 		return "Categoria: " + categoria + " Descripcion: " + descripcion + " Stock: " + stock;
 	}

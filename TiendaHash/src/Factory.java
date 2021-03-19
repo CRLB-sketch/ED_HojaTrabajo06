@@ -20,6 +20,13 @@
 
 public class Factory {
     
+    
+    /** 
+     * Método con patrón de diseño Factory
+     * 
+     * @param type      Seleccionar tipo de Map
+     * @return IMap     Retornará un map específico
+     */
     public static IMap create(String type){
         switch (type) {
 

@@ -4,7 +4,7 @@
  * 
  * Operaciones con mapas
  * 
- * Esta clase ejecutará¡ el programa completo
+ * Esta clase ejecutarï¿½ el programa completo
  * 
  * Git del programa: https://github.com/CRLB-sketch/ED_HojaTrabajo06.git
  * 
@@ -20,6 +20,12 @@
  **/    
 
 public class Main {
+    
+    /** 
+     * MÃ©todo para iniciar programa
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         Controller ctrl = new Controller();
         ctrl.menu();

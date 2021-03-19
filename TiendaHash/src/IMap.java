@@ -17,16 +17,14 @@
 
 public interface IMap {
     
-    /**
-     * Método escencial para agregar un elemento
-     * 
-     * @param key       La llave
-     * @param value     Valor de la llave
-     */
-    public void putElement(String key, String value);
+    public String readList();
 
-    public String seeContent();
+    public String showMapping();
 
+    public String searchByCategory(String search);
+
+    public String obtainProduct(String search);
+    
     public String toString();
     
 }

@@ -29,15 +29,22 @@ public class View {
         scan = new Scanner(System.in);
     }
 
-    // --> MÈtodos
+    // --> MÔøΩtodos
+    
+    /** 
+     * M√©todo para mostrar el menu principal
+     * 
+     * @param map       Tipo de map seleccionado
+     * @return String   Retornar√° la opci√≥n deseada
+     */
     public String mainMenu(IMap map){
         System.out.println("####################################################################################");
         System.out.println("+++++ Tipo de Map : [" + map + "] +++++");
-        System.out.println("Men˙ principal: ");
+        System.out.println("MenÔøΩ principal: ");
         System.out.println("1. Definir tipo de Map."); // Seleccion de Map
-        System.out.println("2. Agregar un producto a la colecciÛn del usuario.");  //Producto agregado a la lista de compras
-        System.out.println("3. Mostrar la categorÌa de un producto."); // La categoria del producto es "Lacteos" // Ya esta
-        System.out.println("4. Mostrar carrito de compra (Ordenado por categorÌa)."); //Un for, pero ordenado por categoria
+        System.out.println("2. Agregar un producto a la colecciÔøΩn del usuario.");  //Producto agregado a la lista de compras
+        System.out.println("3. Mostrar la categorÔøΩa de un producto."); // La categoria del producto es "Lacteos" // Ya esta
+        System.out.println("4. Mostrar carrito de compra (Ordenado por categorÔøΩa)."); //Un for, pero ordenado por categoria
         System.out.println("5. Ver productos disponibles en la tienda (Ordenadas por categoria)."); // El listado de todo dentro del archivo pero ordenado // Ya esta
         System.out.println("6. Salir");
 
@@ -45,12 +52,35 @@ public class View {
         return op;
     }
     
+    /** 
+     * M√©todo para escoger un producto
+     * 
+     * @return String   Retornar√° el producto deseado
+     */
+    public String choiceProduct(){
+        System.out.println("Escriba el producto que desee agregar: ");
+
+        String search = scan.nextLine();
+        return search;
+    }
+        
+    /** 
+     * M√©todo para obtener una categor√≠a
+     * 
+     * @return String   Retornar√° el nombre de la categor√≠a
+     */
     public String getCategory() {
 		System.out.print("Escriba que categoria quiere buscar: ");
-        String busqueda = scan.nextLine();
-		return busqueda;
-    }
 
+        String search = scan.nextLine();
+		return search;
+    }
+    
+    /** 
+     * M√©todo para definir un map
+     * 
+     * @return String   Nombre del map
+     */
     public String defineMap(){
         System.out.println("1. HashMap");
         System.out.println("2. TreeMap");
@@ -64,7 +94,7 @@ public class View {
     }
 
     public void errorMap(){
-        System.out.println("--> HEY! TodavÌa no has definido un map, tienes que definir uno");
+        System.out.println("--> HEY! TodavÔøΩa no has definido un map, tienes que definir uno");
     }
 
     public void errorUknow(){
@@ -72,13 +102,19 @@ public class View {
     }
     
     public void invalid(){
-        System.out.println("--> OpciÛn Inv·lida");
+        System.out.println("--> OpciÔøΩn InvÔøΩlida");
     }
 
     public void farewell(){
         System.out.println("--> Salinedo...");
     }
 
+    
+    /** 
+     * M√©todo para mostrar informaci√≥n adicional e importante
+     * 
+     * @param information   Informaci√≥n ingresada
+     */
     public void dialogueTest(String information){
         System.out.println(information);
     }

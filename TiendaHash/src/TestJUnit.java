@@ -13,9 +13,9 @@ public class TestJUnit extends TestCase{
         System.out.println("Probando Doc:");
         System.out.println(all);
 
-        IMap the_new_imap = ReaderTxt.bringMap(all, map);
+        // IMap the_new_imap = ReaderTxt.bringMap(all, map);
 
-        assertEquals(null, the_new_imap);
+        // assertEquals(null, the_new_imap);
     }
 
 }

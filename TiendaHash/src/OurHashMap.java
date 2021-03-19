@@ -17,25 +17,32 @@
 
 import java.util.Map;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
+import java.io.FileReader;
 import java.util.HashMap;
 
 public class OurHashMap implements IMap{
 	
-HashMap <Integer, Product> ProductsTienda; 
+    // --> Definir el Hash Map
+    private HashMap <Integer, Product> ProductsTienda; 
 	
+    // --> Constructor
 	public OurHashMap() {
 		ProductsTienda = new HashMap <Integer, Product>();
-		//leerListado();
 	}
    
-	public void leerListado() {
-		// TODO Auto-generated method stub
+    // --> Métodos    
+    
+    /** 
+     * @return String
+     */
+    @Override
+	public String readList() {
 		
-		String texto = new String();
+        String info = "";
+
 		try {
-			FileReader fr = new FileReader("./doc/ListadoProduct.txt");
+			FileReader fr = new FileReader("docs\\ListadoProducto.txt");
 			BufferedReader entrada = new BufferedReader(fr); 
 			String s;
 			Integer key = 0;
@@ -43,16 +50,24 @@ HashMap <Integer, Product> ProductsTienda;
 			while((s = entrada.readLine()) != null) {
 				String[] temp = s.split("\\|");
 				ProductsTienda.put(key, new Product(temp[0].trim(),temp[1].trim(),Integer.parseInt(temp[2].trim())));
-				key +=1;
+				key += 1;
 			}
 			
 		}
 		catch(java.io.FileNotFoundException fnfex) {
-			System.out.println("Archivo no encontrado: " + fnfex);}
+            info = "Archivo no encontrado: " + fnfex;
+        }
 		catch(java.io.IOException ioex) {}
+
+        return info;
 	}
 	
-	public String mostrarMapeo() {
+    
+    /** 
+     * @return String
+     */
+    @Override
+	public String showMapping() {
 		String cadena = "";
 		
 		for(Map.Entry<Integer, Product> product: ProductsTienda.entrySet()) {
@@ -60,37 +75,75 @@ HashMap <Integer, Product> ProductsTienda;
 			Product ProductIndividual = product.getValue();
 			cadena = cadena + llave + ".) " + ProductIndividual.getCategoria() + " | " + ProductIndividual.getDescripcion() + " | " + ProductIndividual.getStock() + "\n";
 		}
+
 		return cadena;
 	}
 	
-	public String buscarPorCategoria(String buscar) {
+    
+    /** 
+     * @param search
+     * @return String
+     */
+    @Override
+	public String searchByCategory(String search) {
+
 		String cadena = "";
-		ArrayList<String> encontrados;
+
+		ArrayList<String> finded = new ArrayList<String>();
 		for(Map.Entry<Integer, Product> product: ProductsTienda.entrySet()) {	
-			Product ProductIndividual = product.getValue();
-			if(ProductIndividual.getCategoria().equals(buscar)) {
-				cadena = "La categoria del producto es: " + ProductIndividual.getCategoria();
-			}else {
-				cadena =  "Error, esa categoria no existe, ingresela de nuevo";
+			Product productoIndividual = product.getValue();
+			if(productoIndividual.getCategoria().equals(search)) {
+                String the_String = productoIndividual.getCategoria() + " | " + productoIndividual.getDescripcion() + " | " + productoIndividual.getStock();
+                finded.add(the_String);
 			}
 		}
-		return cadena;
+
+        if(finded.size() == 0){
+            cadena = "--> Error, esa categoria no existe";
+        }
+        else{
+            for(String str: finded){
+                cadena += str + "\n";
+            }
+        }
+
+		return cadena;        
 	}
-	
+	    
+    
+    /** 
+     * @param search
+     * @return String
+     */
+    @Override
+    public String obtainProduct(String search) {
+
+        String info = "";
+
+        for(Map.Entry<Integer, Product> product: ProductsTienda.entrySet()){
+            Product individualProduct = product.getValue();
+
+            if(individualProduct.getDescripcion().equals(search) && individualProduct.getStock() >= 1){  
+                individualProduct.setStock(individualProduct.getStock() - 1);                              
+                String producto = individualProduct.getCategoria() + " | " + individualProduct.getDescripcion();
+                info = producto;
+                break;                
+            }
+            else{
+                info = "NotAvalaible";
+            }
+        }
+        
+        return info;
+    }
+
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Hash Map";
     }
 
-	@Override
-	public void putElement(String key, String value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String seeContent() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

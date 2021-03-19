@@ -49,21 +49,4 @@ public class ReaderTxt {
         return text;
     }
 
-    public static IMap bringMap(String info, IMap map){
-
-        String[] words = info.split("[|]");
-
-        for (int i = 0; i < words.length-1; i++) {
-            String key = words[i].toLowerCase();
-            int module = i % 2;
-
-            if(module == 0){ // Numero Par
-                String value = words[i+1].toLowerCase();
-                map.putElement(key, value);                
-            }            
-        }    
-        
-        return map;
-    }
-
 }
