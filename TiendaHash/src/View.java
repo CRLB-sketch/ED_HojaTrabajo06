@@ -32,20 +32,20 @@ public class View {
     // --> Mï¿½todos
     
     /** 
-     * MÃ©todo para mostrar el menu principal
+     * Método para mostrar el menu principal
      * 
      * @param map       Tipo de map seleccionado
-     * @return String   RetornarÃ¡ la opciÃ³n deseada
+     * @return String   Retornará¡ la opción deseada
      */
     public String mainMenu(IMap map){
         System.out.println("####################################################################################");
         System.out.println("+++++ Tipo de Map : [" + map + "] +++++");
-        System.out.println("Menï¿½ principal: ");
-        System.out.println("1. Definir tipo de Map."); // Seleccion de Map
-        System.out.println("2. Agregar un producto a la colecciï¿½n del usuario.");  //Producto agregado a la lista de compras
-        System.out.println("3. Mostrar la categorï¿½a de un producto."); // La categoria del producto es "Lacteos" // Ya esta
-        System.out.println("4. Mostrar carrito de compra (Ordenado por categorï¿½a)."); //Un for, pero ordenado por categoria
-        System.out.println("5. Ver productos disponibles en la tienda (Ordenadas por categoria)."); // El listado de todo dentro del archivo pero ordenado // Ya esta
+        System.out.println("Menú principal: ");
+        System.out.println("1. Definir tipo de Map."); 
+        System.out.println("2. Agregar un producto a la colección del usuario.");  
+        System.out.println("3. Mostrar productos por categoría."); 
+        System.out.println("4. Mostrar carrito de compra (Ordenado por categoría)."); 
+        System.out.println("5. Ver productos disponibles en la tienda (Ordenadas por categoría).");
         System.out.println("6. Salir");
 
         String op = scan.nextLine();
@@ -53,9 +53,9 @@ public class View {
     }
     
     /** 
-     * MÃ©todo para escoger un producto
+     * Método para escoger un producto
      * 
-     * @return String   RetornarÃ¡ el producto deseado
+     * @return String   Retornará el producto deseado
      */
     public String choiceProduct(){
         System.out.println("Escriba el producto que desee agregar: ");
@@ -65,9 +65,9 @@ public class View {
     }
         
     /** 
-     * MÃ©todo para obtener una categorÃ­a
+     * Método para obtener una categoría
      * 
-     * @return String   RetornarÃ¡ el nombre de la categorÃ­a
+     * @return String   Retornará el nombre de la categoría
      */
     public String getCategory() {
 		System.out.print("Escriba que categoria quiere buscar: ");
@@ -77,7 +77,7 @@ public class View {
     }
     
     /** 
-     * MÃ©todo para definir un map
+     * Método para definir un map
      * 
      * @return String   Nombre del map
      */
@@ -94,7 +94,7 @@ public class View {
     }
 
     public void errorMap(){
-        System.out.println("--> HEY! Todavï¿½a no has definido un map, tienes que definir uno");
+        System.out.println("--> HEY! Todavía no has definido un map, tienes que definir uno");
     }
 
     public void errorUknow(){
@@ -102,18 +102,18 @@ public class View {
     }
     
     public void invalid(){
-        System.out.println("--> Opciï¿½n Invï¿½lida");
+        System.out.println("--> Opción Inválida");
     }
 
     public void farewell(){
-        System.out.println("--> Salinedo...");
+        System.out.println("--> Saliendo...");
     }
 
     
     /** 
-     * MÃ©todo para mostrar informaciÃ³n adicional e importante
+     * MÃ©todo para mostrar información adicional e importante
      * 
-     * @param information   InformaciÃ³n ingresada
+     * @param information   Información ingresada
      */
     public void dialogueTest(String information){
         System.out.println(information);

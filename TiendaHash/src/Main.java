@@ -22,7 +22,7 @@
 public class Main {
     
     /** 
-     * MÃ©todo para iniciar programa
+     * Método para iniciar programa
      * 
      * @param args
      */

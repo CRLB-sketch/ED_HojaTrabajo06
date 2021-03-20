@@ -41,7 +41,7 @@ public class Product {
 	}
 
 	/**
-	 * Getter DescripciÃ³n
+	 * Getter Descripción
 	 * 
 	 * @return the descripcion
 	 */
@@ -69,7 +69,7 @@ public class Product {
 	
 	
 	/** 
-	 * MÃ©todo To String
+	 * Método To String
 	 * 
 	 * @return String	Retorna el nuevo String
 	 */

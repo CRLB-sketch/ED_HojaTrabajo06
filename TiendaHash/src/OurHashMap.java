@@ -31,7 +31,7 @@ public class OurHashMap implements IMap{
 		ProductsTienda = new HashMap <Integer, Product>();
 	}
    
-    // --> MÃ©todos    
+    // --> Métodos    
     
     /** 
      * @return String

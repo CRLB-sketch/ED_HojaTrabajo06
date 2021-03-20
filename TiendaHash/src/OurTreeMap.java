@@ -31,12 +31,12 @@ public class OurTreeMap implements IMap{
         productsStore = new TreeMap<Integer, Product>();
     }
     
-    // --> M√©todos    
+    // --> MÈtodos    
     
     /** 
-     * M√©todo para leer el documento
+     * MÈtodo para leer el documento
      * 
-     * @return String   Retornar√° un mensaje
+     * @return String   Retornar· un mensaje
      */
     @Override
     public String readList() {
@@ -64,9 +64,9 @@ public class OurTreeMap implements IMap{
     }
         
     /** 
-     * M√©todo para ense√±ar los productos con sus categorias
+     * MÈtodo para enseÒar los productos con sus categorias
      * 
-     * @return String   Retornar√° el contenido
+     * @return String   Retornar· el contenido
      */
     @Override
     public String showMapping() {
@@ -82,10 +82,10 @@ public class OurTreeMap implements IMap{
     }
         
     /** 
-     * M√©todo para buscar productos por categor√≠a
+     * M√©todo para buscar productos por categor·
      * 
      * @param search    Elemento/Producto deseado
-     * @return String   Retornar√° los elementos o un mensaje
+     * @return String   Retornar· los elementos o un mensaje
      */
     @Override
     public String searchByCategory(String search) {
@@ -113,11 +113,11 @@ public class OurTreeMap implements IMap{
     }
             
     /** 
-     * M√©todo para obtener un producto en espec√≠fico.
+     * MÈtodo para obtener un producto en especÌfico.
      * Se estar√° restando al stock cuando este avance.
      * 
      * @param search    Elemento/Producto deseado
-     * @return String   Retornar√° el producto o mensaje
+     * @return String   Retornar· el producto o mensaje
      */
     @Override
     public String obtainProduct(String search) {
@@ -141,7 +141,7 @@ public class OurTreeMap implements IMap{
     }
     
     /** 
-     * M√©todo toString
+     * MÈtodo toString
      * 
      * @return String   String deseado
      */

@@ -27,7 +27,7 @@ public class Controller {
     private IMap map;
     private ArrayList<String> user;
 
-    // --> MÃ©todos
+    // --> Métodos
     public Controller(){
         view = new View();
         user = new ArrayList<String>();
@@ -35,12 +35,12 @@ public class Controller {
 
     // --> Constructor
     /**
-     * MÃ©todo para tener el control del programa
+     * Método para tener el control del programa
      */
     public void menu(){
 
         // String info = "";                
-        boolean out = false; // Para el menu
+        boolean out = false; // Para el menú
 
         do {
             
@@ -60,7 +60,7 @@ public class Controller {
                         if(map == null){ // No esta definido
                             view.errorMap();
                         }
-                        else{ // Se definio con exito   
+                        else{ // Se definió con exito   
                             view.dialogueTest(map.readList());
                             view.dialogueTest("--> Map listo");    
                         }
@@ -96,7 +96,11 @@ public class Controller {
                     case "4":
                         view.dialogueTest("----- Mostrar carrito de compras -----");                                                
 
-                        selectionSort(user);
+                        if(user.size() == 0) {
+                        	view.dialogueTest("\nTodavía no tienes productos en tu carrito.\n");
+                        }else {
+                        	selectionSort(user);
+                        }
                         
                         for(String str: user){
                             view.dialogueTest(str);
@@ -117,7 +121,7 @@ public class Controller {
                         view.farewell();
                         break;
                 
-                    // OpciÃ³n invÃ¡lida
+                    // Opción inválida
                     default:
                         view.invalid();
                         break;
@@ -136,7 +140,7 @@ public class Controller {
 
     
     /** 
-     * MÃ©todo Selection Sort para ordenar por categorias
+     * Método Selection Sort para ordenar por categorias
      * 
      * @param user  ArrayList con Strings del carrito del usuario
      */

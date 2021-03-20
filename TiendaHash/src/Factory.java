@@ -4,7 +4,7 @@
  * 
  * Operaciones con mapas
  * 
- * Patron de dise√±o factory para poder solicitar:
+ * Patron de diseÒo factory para poder solicitar:
  * HashMap, TreeMap
  * 
  * <p>
@@ -22,10 +22,10 @@ public class Factory {
     
     
     /** 
-     * M√©todo con patr√≥n de dise√±o Factory
+     * M√©todo con patrÛn de diseÒo Factory
      * 
      * @param type      Seleccionar tipo de Map
-     * @return IMap     Retornar√° un map espec√≠fico
+     * @return IMap     Retornar· un map especÌfico
      */
     public static IMap create(String type){
         switch (type) {
@@ -38,7 +38,7 @@ public class Factory {
             case "2":
                 return new OurTreeMap();
         
-            // Map Inv√°lido
+            // Map Inv·lido
             default:
                 return null;
                 
